@@ -1,17 +1,15 @@
 <template>
   <div class="home">
-    Poke shop
+    Wellcome to Pokemon Shop
+    <ThePokemonsList />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
+import ThePokemonsList from '@/components/ThePokemonsList';
 
 export default {
   name: 'Home',
-  components: {
-    
-  },
+  components: { ThePokemonsList },
 };
 </script>
