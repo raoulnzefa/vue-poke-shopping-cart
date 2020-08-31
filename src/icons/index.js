@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faHeart as solidHeart,
   faEye as solidEye,
+  faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faHeart as regularHeart,
@@ -11,6 +12,13 @@ import {
   faChartBar,
 } from '@fortawesome/free-regular-svg-icons';
 
-library.add([solidHeart, regularHeart, solidEye, regularEye, faChartBar]);
+library.add([
+  solidHeart,
+  regularHeart,
+  solidEye,
+  regularEye,
+  faChartBar,
+  faShoppingCart,
+]);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
