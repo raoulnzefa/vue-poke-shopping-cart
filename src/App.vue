@@ -7,7 +7,7 @@
 </template>
 <script>
 import TheNavigation from "@/components/TheNavigation";
-import TheCart from "@/components/Cart";
+import TheCart from "@/components/TheCart";
 export default {
   components: { TheNavigation, TheCart },
 };
