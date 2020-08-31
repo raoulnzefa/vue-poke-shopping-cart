@@ -1,14 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav"><router-link to="/">Home</router-link> |</div>
+    <TheNavigation />
+    <TheCart />
     <router-view />
   </div>
 </template>
-
+<script>
+import TheNavigation from "@/components/TheNavigation";
+import TheCart from "@/components/Cart";
+export default {
+  components: { TheNavigation, TheCart },
+};
+</script>
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#app {
+  position: relative;
+}
+#nav {
+  text-align: center;
 }
 </style>
