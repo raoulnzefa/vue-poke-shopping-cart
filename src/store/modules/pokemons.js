@@ -5,9 +5,12 @@ export default {
     pushPokemons(state, pokemons) {
       state.pokeball = pokemons;
     },
-    makeFavorite(state, pokemonIndex) {
-      state.pokeball[pokemonIndex].isFavorite = !state.pokeball[pokemonIndex]
-        .isFavorite;
+    makeFavorite(state, pokemon) {
+      pokemon.isFavorite = !pokemon.isFavorite;
+    },
+
+    decrementStock(state, pokemon) {
+      pokemon.stock--;
     },
   },
   actions: {
@@ -33,8 +36,11 @@ export default {
           ),
         );
     },
-    changeFavorite({ commit }, pokemonIndex) {
-      commit('makeFavorite', pokemonIndex); //TODO change to makeFavorite pokemons not in pokeball, because pokeball is  pokemon's main storer and I think the favorite property have tolive in othe place, like and array with its own getters
+    changeFavorite({ commit }, pokemon) {
+      commit('makeFavorite', pokemon); //TODO change to makeFavorite pokemons not in pokeball, because pokeball is  pokemon's main storer and I think the favorite property have tolive in othe place, like and array with its own getters
+    },
+    decrementPokemonStock({ commit }, pokemon) {
+      commit('decrementStock', pokemon);
     },
   },
 
@@ -47,6 +53,9 @@ export default {
         cost: pokemon.cost,
         isFavorite: pokemon.isFavorite,
       }));
+    },
+    isInStock() {
+      return (pokemon) => pokemon.stock > 0;
     },
   },
   modules: {},
